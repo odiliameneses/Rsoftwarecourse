@@ -108,7 +108,7 @@ q10<- daily %>%
   summarise(mean = mean(Arithmetic_Mean, na.rm=TRUE)) %>% 
   pivot_wider(names_from= Parameter_Name,values_from = mean) %>% 
   group_by(State_Code, County_Code, Site_Num) %>%
-  summarise(correlation = cor('Sulfate PM2.5 LC', 'Total Nitrate PM2.5 LC')) %>%
+  summarise(correlation = cor(`Sulfate PM2.5 LC`, `Total Nitrate PM2.5 LC`)) %>%
   arrange(desc(correlation))
 
 summary(q10)
